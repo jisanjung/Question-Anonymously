@@ -1,11 +1,17 @@
 import './App.css';
 import RoleSelectPage from './pages/RoleSelectPage';
+import { Routes, Route } from 'react-router-dom';
+import StudentViewPage from './pages/StudentViewPage';
+import TeacherViewPage from './pages/TeacherViewPage';
 
 function App() {
   return (
     <div>
-      <h1 className='text-center'>Question Anonymously</h1>
-      <RoleSelectPage/>
+      <Routes>
+        <Route path='/' element={<RoleSelectPage/>}/>
+        <Route path='/student' element={<StudentViewPage/>}/>
+        <Route path='/teacher' element={<TeacherViewPage/>}/>
+      </Routes>
     </div>
   );
 }

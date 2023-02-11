@@ -1,15 +1,12 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 const RoleSelectPage = () => {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100'>
-        <button className='btn btn-primary p-5 m-1'>
-            Student
-        </button>
+        <Link to="/student" className='btn btn-primary btn-lg p-5'>Student</Link>
         <span className='m-5'>or</span>
-        <button className='btn btn-primary p-5 m-1'>
-            Teacher
-        </button>
+        <Link to="/teacher" className='btn btn-primary btn-lg bg-white text-primary p-5'>Teacher</Link>
     </div>
   )
 }
