@@ -1,16 +1,11 @@
 import './App.css';
-import Card from './components/Card';
+import RoleSelectPage from './pages/RoleSelectPage';
 
 function App() {
   return (
     <div>
-      <h1>Question Anonymously</h1>
-      <Card>
-        Student
-      </Card>
-      <Card>
-        Teacher 
-      </Card>
+      <h1 className='text-center'>Question Anonymously</h1>
+      <RoleSelectPage/>
     </div>
   );
 }
