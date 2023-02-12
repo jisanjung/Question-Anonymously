@@ -28,9 +28,8 @@ return (
     {classroom.map((user, i) => {
       return (
       <div key={i}>
-        <h2>Teacher: {user.Name}</h2>
-        <h2>Class: {user.Description}</h2>
-        <h2>Class Code: {user.ClassCode}</h2>
+        <h2>Student: {user.name} || Question: {user.question}</h2>
+        
       </div>
       )
     })}

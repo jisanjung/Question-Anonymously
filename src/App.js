@@ -11,7 +11,6 @@ function App() {
 
   return (
     <div>
-      <ViewData/>
       <Routes>
         <Route path='/' element={<RoleSelectPage/>}/>
         <Route path='/student' element={<StudentViewPage/>}/>

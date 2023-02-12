@@ -17,7 +17,7 @@ const JoinClass = (props) => {
                 Input your name<br/>
                 <input type="text"></input>
                 <br/>
-                Input your password<br/>
+                Input your class code<br/>
                 <input type="text"></input>
                 <br/>
                 <Link to="/classTeacher" className='btn btn-primary'>Generate Class Code</Link>
@@ -46,7 +46,7 @@ const JoinClass = (props) => {
             question: question
           });
           console.log("Document written with ID: ", docRef.id);
-        }}>join class</button>
+        }}>Ask in class</button>
     </div>
   )
 }
