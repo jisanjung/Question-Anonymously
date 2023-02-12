@@ -6,6 +6,7 @@ const StudentViewPage = () => {
     <div className="container">
       <JoinClass name="Student"/>
       <br/>
+      
     </div>
     
   )
