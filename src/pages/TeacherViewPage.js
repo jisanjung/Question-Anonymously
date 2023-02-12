@@ -1,7 +1,5 @@
 import React from 'react'
-import JoinClass  from '../components/JoinClass'
-
-
+import JoinClass from '../components/JoinClass'
 
 const TeacherViewPage = () => {
 
