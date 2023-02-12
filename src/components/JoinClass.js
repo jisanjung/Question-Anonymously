@@ -15,8 +15,7 @@ const JoinClass = (props) => {
                 <input type="text"></input>
                 <br/>
                 <Link  to="/classTeacher" className='btn btn-primary'>Generate Class Code</Link>
-            </div>
-            
+            </div> 
           )
     }
 
