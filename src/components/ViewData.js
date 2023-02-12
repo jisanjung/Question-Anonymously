@@ -2,14 +2,14 @@ import React from 'react'
 import {useState, useEffect} from 'react';
 import {db} from '../firebase_setup/firebase';
 import {collection, getDocs} from 'firebase/firestore';
-
-
+import { useLocation } from 'react-router-dom';
 
 const ViewData = () => {
 
+  const location = useLocation();
     
     const [classroom, setClassroom] = useState([]);
-    const teachersCollectionRef = collection(db, "1234")
+    const teachersCollectionRef = collection(db, location.state)
     useEffect(() => {
         const getTeachers = async () => {
         const data = await getDocs(teachersCollectionRef);
@@ -25,12 +25,12 @@ const ViewData = () => {
 
 return (
   <div>
+    {console.log(classroom)}
     {classroom.map((user, i) => {
       return (
       <div key={i}>
-        <h2>Teacher: {user.Name}</h2>
-        <h2>Class: {user.Description}</h2>
-        <h2>Class Code: {user.ClassCode}</h2>
+        <h2>Student: {user.name}</h2>
+        <h2>Question: {user.question}</h2>
       </div>
       )
     })}
