@@ -1,8 +1,13 @@
 import React from 'react'
+import JoinClass  from '../components/JoinClass'
 
 const StudentViewPage = () => {
   return (
-    <div>StudentViewPage</div>
+    <div className="container">
+      <JoinClass name="Student"/>
+      <br/>
+    </div>
+    
   )
 }
 
