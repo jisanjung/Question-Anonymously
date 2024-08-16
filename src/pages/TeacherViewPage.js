@@ -1,11 +1,7 @@
-import React, { useEffect, useState } from "react";
-import JoinClass  from '../components/JoinClass'
+import React from 'react'
+import JoinClass from '../components/JoinClass'
 
 const TeacherViewPage = () => {
-
-  useEffect(() => {
-    console.log("from use effect");
-  }, []);
 
   return (
     <div className="container">

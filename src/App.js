@@ -5,8 +5,10 @@ import StudentViewPage from './pages/StudentViewPage';
 import TeacherViewPage from './pages/TeacherViewPage';
 import ClassroomStudentView from './pages/ClassroomStudentView';
 import ClassroomTeacherView from './pages/ClassroomTeacherView';
+import ViewData from './components/ViewData';
 
 function App() {
+
   return (
     <div>
       <Routes>

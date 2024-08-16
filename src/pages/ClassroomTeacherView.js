@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import ViewData from "../components/ViewData";
 
 const ClassroomTeacherView = () => {
+
   return (
-    <div>ClassroomTeacherView</div>
+    <div>
+      <button onClick={() => document.location.reload()}>Refresh questions</button>
+      <ViewData/>
+    </div>
   )
 }
 
