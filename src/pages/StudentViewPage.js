@@ -1,14 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import JoinClass  from '../components/JoinClass'
+import ClassCode from '../components/ClassCode'
+import Nav from '../components/Nav'
 
 const StudentViewPage = () => {
+
+  const [renderQuestionForm, setRenderQuestionForm] = useState(false);
+  
   return (
-    <div className="container">
-      <JoinClass name="Student"/>
-      <br/>
-      
-    </div>
-    
+    <>
+      <Nav>
+        Welcome Student
+      </Nav>
+      <div className="container">
+        {!renderQuestionForm ? 
+          <ClassCode setRenderQuestionForm={setRenderQuestionForm}/> :
+          <p>render question form</p>
+        }
+      </div>
+    </>
   )
 }
 
