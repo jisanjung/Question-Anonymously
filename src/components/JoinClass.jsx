@@ -37,6 +37,7 @@ const JoinClass = () => {
             <input type="text" className="form-control" 
                 value={inputClassCode} 
                 onChange={(e) => setInputClassCode(e?.target?.value)}
+                inputMode='numeric'
             />
         </div>
         <div className='d-grid gap-2'>

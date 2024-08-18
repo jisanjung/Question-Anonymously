@@ -22,6 +22,7 @@ const ClassCode = ({ setRenderQuestionForm, setClassCode }) => {
                     <div className='input-group input-group-lg mb-3'>
                         <input type="text" className="form-control" placeholder='ex: 498579'
                             onChange={(e) => setClassCodeValue(e?.target?.value)}
+                            inputMode='numeric'
                         />
                     </div>
                     <div className='d-grid gap-2'>
