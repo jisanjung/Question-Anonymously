@@ -21,7 +21,7 @@ const RoleSelectPage = () => {
                     headerText='Student'
                     desc='Ask questions to the teacher anonymously, no name needed.'
                     borderType='border-info'
-                    styleOverrides={{ width: '18rem', height: '136px' }}
+                    styleOverrides={{ width: '18rem', height: '150px' }}
                   />
                 </Link>
                 <span className='d-block m-3 text-center'>or</span>
@@ -30,7 +30,7 @@ const RoleSelectPage = () => {
                     headerText='Teacher'
                     desc='Have the ability to see questions that the students submit anonymously.'
                     borderType='border-warning'
-                    styleOverrides={{ width: '18rem', height: '136px' }}
+                    styleOverrides={{ width: '18rem', height: '150px' }}
                   />
                 </Link>
             </div>

@@ -17,7 +17,7 @@ const Card = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-        <div className="card-body">
+        <div className="card-body d-flex flex-column justify-content-start">
             <h5 className="card-title">{headerText}</h5>
             <p className="card-text">{desc}</p>
         </div>
