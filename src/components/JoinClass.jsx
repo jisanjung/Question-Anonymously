@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { createUnique6DigitNumber } from '../util/helper'
+import { createUnique6DigitNumber } from '../util/helper';
+import { Link } from "react-router-dom";
 
 const JoinClass = () => {
 
@@ -21,7 +22,7 @@ const JoinClass = () => {
             <button className='btn'
                 onClick={() => {
                     const createClassCode = createUnique6DigitNumber();
-                    setInputClassCode(createClassCode());
+                    setInputClassCode(createClassCode()?.toString());
                 }}
             >
                 <span className='link-primary' role="button">Generate a new one.</span>
@@ -34,11 +35,15 @@ const JoinClass = () => {
             />
         </div>
         <div className='d-grid gap-2'>
-            <button type='submit' className='btn btn-info text-white w-full'
+            <Link to="/classTeacher" 
+                className='btn btn-info text-white w-full'
+                state={inputClassCode} 
                 onClick={() => {
                     localStorage.setItem('classCode', inputClassCode);
                 }}
-            >Join</button>
+            >
+                Join
+            </Link>
         </div>
     </div>
     </>
