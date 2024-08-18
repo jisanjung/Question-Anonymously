@@ -18,15 +18,20 @@ const JoinClass = () => {
     <div className='text-center'>
         <h3 className='mb-3'>Join your classroom</h3>
         <p className='d-flex align-items-center'>
-            <span>Don't have a code?</span> 
-            <button className='btn'
-                onClick={() => {
-                    const createClassCode = createUnique6DigitNumber();
-                    setInputClassCode(createClassCode()?.toString());
-                }}
-            >
-                <span className='link-primary' role="button">Generate a new one.</span>
-            </button>
+            <span>
+                <span>Don't have a code?</span> 
+                <button className='btn'
+                    onClick={() => {
+                        const createClassCode = createUnique6DigitNumber();
+                        setInputClassCode(createClassCode()?.toString());
+                    }}
+                    style={{
+                        padding: '0 0 2px 5px',
+                    }}
+                >
+                    <span className='link-primary' role="button">Generate a new one.</span>
+                </button>
+            </span>
         </p>
         <div className='input-group input-group-lg mb-3'>
             <input type="text" className="form-control" 
