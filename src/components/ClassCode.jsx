@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const ClassCode = ({ setRenderQuestionForm }) => {
+const ClassCode = ({ setRenderQuestionForm, setClassCode }) => {
+
+    const [classCodeValue, setClassCodeValue] = useState('');
+
   return (
     <>
         <div className='d-flex justify-content-center align-items-center'
@@ -12,11 +15,14 @@ const ClassCode = ({ setRenderQuestionForm }) => {
                 <form
                     onSubmit={(e) => {
                         e.preventDefault();
+                        setClassCode(classCodeValue);
                         setRenderQuestionForm(true);
                     }}
                 >
                     <div className='input-group input-group-lg mb-3'>
-                        <input type="text" className="form-control" placeholder='ex: 498579'></input>
+                        <input type="text" className="form-control" placeholder='ex: 498579'
+                            onChange={(e) => setClassCodeValue(e?.target?.value)}
+                        />
                     </div>
                     <div className='d-grid gap-2'>
                         <button type='submit' className='btn btn-info text-white w-full'>Continue</button>

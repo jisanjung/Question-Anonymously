@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import JoinClass  from '../components/JoinClass'
+import React, {  useState } from 'react'
 import ClassCode from '../components/ClassCode'
 import Nav from '../components/Nav'
 import QuestionForm from '../components/QuestionForm'
@@ -7,6 +6,7 @@ import QuestionForm from '../components/QuestionForm'
 const StudentViewPage = () => {
 
   const [renderQuestionForm, setRenderQuestionForm] = useState(false);
+  const [classCode, setClassCode] = useState('');
   
   return (
     <>
@@ -15,8 +15,11 @@ const StudentViewPage = () => {
       </Nav>
       <div className="container">
         {!renderQuestionForm ? 
-          <ClassCode setRenderQuestionForm={setRenderQuestionForm}/> 
-          : <QuestionForm/>
+          <ClassCode 
+            setRenderQuestionForm={setRenderQuestionForm} 
+            setClassCode={setClassCode}
+          /> 
+          : <QuestionForm classCode={classCode}/>
         }
       </div>
     </>
