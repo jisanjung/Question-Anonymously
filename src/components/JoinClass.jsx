@@ -36,7 +36,7 @@ const JoinClass = () => {
         </div>
         <div className='d-grid gap-2'>
             <Link to="/classTeacher" 
-                className='btn btn-info text-white w-full'
+                className={`btn btn-info text-white w-full ${!inputClassCode && 'disabled'}`}
                 state={inputClassCode} 
                 onClick={() => {
                     localStorage.setItem('classCode', inputClassCode);
