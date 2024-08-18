@@ -1,12 +1,22 @@
 import React from 'react'
-import JoinClass from '../components/JoinClass'
+import JoinClass from '../components/JoinClass';
+import Nav from '../components/Nav';
 
 const TeacherViewPage = () => {
 
   return (
-    <div className="container">
-      <JoinClass name="Teacher"/>
-    </div>
+    <>
+      <Nav>
+        Welcome Teacher
+      </Nav>
+      <div className="container">
+        <div className='d-flex justify-content-center align-items-center'
+          style={{ height: '80vh' }}
+        >
+          <JoinClass/>
+        </div>
+      </div>
+    </>
   )
 }
 
