@@ -38,13 +38,16 @@ const JoinClass = (props) => {
         <input type="text" id="studentQuestion" placeholder="ex: what did you say?" onChange={e => setQuestion(e.target.value)}></input>
         <br/>
         <button type='button' className="btn btn-primary" onClick={async () => {
+          var dia = new Date();
+          var diaStr = dia.toString().replace(" GMT-0400 (Eastern Daylight Time)", " ");
+
           // Add a new document with a generated id.
           const docRef = await addDoc(collection(db, code), {
             name: name,
-            question: question
+            question: question,
+            date: diaStr
           });
 
-          document.getElementById("studentCode").value = null;
           document.getElementById("studentName").value = null;
           document.getElementById("studentQuestion").value = null;
 

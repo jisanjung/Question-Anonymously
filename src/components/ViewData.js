@@ -28,9 +28,12 @@ return (
     {console.log(classroom)}
     {classroom.map((user, i) => {
       return (
-      <div key={i}>
-        <h2>Student: {user.name}</h2>
-        <h2>Question: {user.question}</h2>
+      <div className="card data-card" key={i}>
+        <div className="card-body"> 
+          <h5>Timestamp: {user.date}</h5>
+          <h5>Student: {user.name}</h5>
+          <h3>Question: {user.question}</h3>
+        </div>
       </div>
       )
     })}
