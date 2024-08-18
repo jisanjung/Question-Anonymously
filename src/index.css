@@ -18,3 +18,11 @@ code {
 .btn {
   font-weight: bold !important;
 }
+
+/* breaking out of "small" devices */
+@media screen and (min-width: 576px) {
+  #questionForm {
+    width: 516px;
+    margin: 0 auto;
+  }
+}
