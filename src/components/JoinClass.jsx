@@ -1,9 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createUnique6DigitNumber } from '../util/helper'
 
 const JoinClass = () => {
 
     const [inputClassCode, setInputClassCode] = useState('');
+
+    useEffect(() => {
+        const storedClassCode = localStorage.getItem('classCode');
+        if (storedClassCode) {
+            setInputClassCode(storedClassCode);
+        }
+    }, []);
 
   return (
     <>
@@ -27,7 +34,11 @@ const JoinClass = () => {
             />
         </div>
         <div className='d-grid gap-2'>
-            <button type='submit' className='btn btn-info text-white w-full'>Join</button>
+            <button type='submit' className='btn btn-info text-white w-full'
+                onClick={() => {
+                    localStorage.setItem('classCode', inputClassCode);
+                }}
+            >Join</button>
         </div>
     </div>
     </>
