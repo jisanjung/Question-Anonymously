@@ -1,32 +1,26 @@
 import React from 'react'
 import {useState, useEffect} from 'react';
-import {db} from '../firebase_setup/firebase';
-import {collection, getDocs} from 'firebase/firestore';
 import { useLocation } from 'react-router-dom';
+import { getDocuments } from '../firebase_setup/api';
 
 const ViewData = () => {
 
   const location = useLocation();
     
-    const [classroom, setClassroom] = useState([]);
-    const teachersCollectionRef = collection(db, location.state)
+    const [questions, setQuestions] = useState([]);
     useEffect(() => {
-        const getTeachers = async () => {
-        const data = await getDocs(teachersCollectionRef);
-    
-        setClassroom(data.docs.map((doc) => ({...doc.data(), id: doc.id})));
-    
-        console.log(data);
-        }
-
-        getTeachers()
-    }, []
-    )
+        const classCode = location?.state || '';
+        getDocuments(classCode)
+          .then(data => {
+            const questions = data?.map((doc) => ({...doc?.data(), id: doc?.id})) || [];
+            console.log('DOCUMENTS_FROM_FIRESTORE: ', questions);
+            setQuestions(questions);
+          });
+    }, [location?.state]);
 
 return (
   <div>
-    {console.log(classroom)}
-    {classroom.map((user, i) => {
+    {questions.map((user, i) => {
       return (
       <div className="card data-card" key={i}>
         <div className="card-body"> 
