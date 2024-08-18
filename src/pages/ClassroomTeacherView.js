@@ -5,7 +5,7 @@ const ClassroomTeacherView = () => {
 
   return (
     <div>
-      <button onClick={() => document.location.reload()}>Refresh questions</button>
+      <button className="btn btn-primary refresh-btn" onClick={() => document.location.reload()}>Refresh questions</button>
       <ViewData/>
     </div>
   )

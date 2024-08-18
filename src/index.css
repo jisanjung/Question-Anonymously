@@ -26,3 +26,13 @@ code {
     margin: 0 auto;
   }
 }
+
+.data-card{
+  margin: 1rem;
+  background-color: azure;
+}
+
+.refresh-btn{
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
