@@ -23,7 +23,7 @@ const QuestionForm = () => {
     
   return (
     <>
-    <div id='questionForm'>
+    <div className='narrow-container'>
         {questionSent && 
         <Alert type='success' setVisible={setQuestionSent}>Question sent!</Alert>}
         <form onSubmit={(e) => onQuestionSubmit(e)}>
