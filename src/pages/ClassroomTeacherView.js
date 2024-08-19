@@ -1,13 +1,18 @@
 import React from 'react';
-import ViewData from "../components/ViewData";
+import ViewQuestions from "../components/ViewQuestions";
+import Nav from '../components/Nav';
 
 const ClassroomTeacherView = () => {
 
   return (
-    <div>
-      <button className="btn btn-primary refresh-btn" onClick={() => document.location.reload()}>Refresh questions</button>
-      <ViewData/>
-    </div>
+    <>
+      <Nav>
+        Welcome Teacher
+      </Nav>
+      <div className='container'>
+        <ViewQuestions/>
+      </div>  
+    </>
   )
 }
 

@@ -15,24 +15,39 @@ code {
     monospace;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
 .btn {
   font-weight: bold !important;
+}
+.refresh-btn {
+  transition: transform 1s ease;
+}
+.refresh-btn.spin {
+  animation: spin 0.5s ease;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
 }
 
 /* breaking out of "small" devices */
 @media screen and (min-width: 576px) {
-  #questionForm {
+  .narrow-container {
     width: 516px;
     margin: 0 auto;
   }
+}
+.question-card:hover {
+  border-color: #ffc107;
 }
 
 .data-card{
   margin: 1rem;
   background-color: azure;
-}
-
-.refresh-btn{
-  margin-left: 2rem;
-  margin-top: 2rem;
 }
