@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Alert from './Alert';
 import { addDocument } from '../firebase_setup/api';
 
-const QuestionForm = ({ classCode }) => {
+const QuestionForm = () => {
 
+    const location = useLocation();
     const [question, setQuestion] = useState('');
     const [questionSent, setQuestionSent] = useState(false);
     const [loading, setLoading] = useState(false);
     
     const onQuestionSubmit = async (e) => {
         e.preventDefault();
+        const classCode = location?.state || '';
         setLoading(true);
         if (classCode && question) {
             await addDocument(classCode, question);
