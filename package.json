@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "dayjs": "^1.11.13",
     "firebase": "^10.13.0",
     "jest-dom": "^4.0.0",
     "mongodb": "^6.8.0",

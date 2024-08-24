@@ -1,3 +1,6 @@
+import * as dayjs from 'dayjs';
+import relativeTime from "dayjs/plugin/relativeTime";
+
 // source: ChatGPT
 export const createUnique6DigitNumber = () => {
     const generatedNumbers = new Set();
@@ -15,4 +18,9 @@ export const createUnique6DigitNumber = () => {
         generatedNumbers.add(number);
         return number;
     };
+};
+
+export const timeFromNow = (timestamp) => {
+    dayjs.extend(relativeTime);
+    return dayjs(timestamp).fromNow();
 };
