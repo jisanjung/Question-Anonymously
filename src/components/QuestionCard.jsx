@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { timeFromNow } from '../util/helper';
 
 const QuestionCard = ({ payload, index }) => {
   return (
@@ -7,7 +8,11 @@ const QuestionCard = ({ payload, index }) => {
             <div className="card-body">
                 <h5 className="card-title">Question {index + 1}</h5>
                 <p className="card-text">{payload?.question}</p>
-                <p className="card-text"><small className="text-body-secondary">3 mins ago</small></p>
+                <p className="card-text">
+                  <small className="text-body-secondary">
+                    {payload?.timestamp ? timeFromNow(payload?.timestamp) : 'N/A'}
+                  </small>
+                </p>
             </div>
         </div>
     </>

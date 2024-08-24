@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Alert from './Alert';
 import { addDocument } from '../firebase_setup/api';
+import dayjs from 'dayjs';
 
 const QuestionForm = () => {
 
@@ -15,7 +16,8 @@ const QuestionForm = () => {
         const classCode = location?.state || '';
         setLoading(true);
         if (classCode && question) {
-            await addDocument(classCode, question);
+            const timestamp = dayjs().format();
+            await addDocument(classCode, { question, timestamp });
             setLoading(false);
             setQuestionSent(true);   
         }

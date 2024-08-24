@@ -2,12 +2,12 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
 
 // wrapper for addDoc function in firestore - for application usecase
-export const addDocument = async (classCode, question) => {
-    if (!classCode || !question) {
+export const addDocument = async (classCode, payload) => {
+    if (!classCode || !payload) {
         return false;
     }
     try {
-        const res = await addDoc(collection(db, classCode), { question });
+        const res = await addDoc(collection(db, classCode), { ...payload });
         return Boolean(res);
     } catch (err) {
         console.log('ERROR_ADDING_DOCUMENT_TO_FIRESTORE: ', err);

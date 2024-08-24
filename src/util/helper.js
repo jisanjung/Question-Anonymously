@@ -20,7 +20,7 @@ export const createUnique6DigitNumber = () => {
     };
 };
 
-export const timeFromNow = (now) => {
+export const timeFromNow = (timestamp) => {
     dayjs.extend(relativeTime);
-    return dayjs(now).fromNow();
+    return dayjs(timestamp).fromNow();
 };
