@@ -22,6 +22,10 @@ export const createUnique6DigitNumber = () => {
 
 // source: ChatGPT
 export const generateNumberFromId = (id) => {
+    if (!id) {
+        return 0;
+    }
+    id = id.toString();
     // Hash the ID string to create a unique number
     let hash = 0;
     for (let i = 0; i < id.length; i++) {
