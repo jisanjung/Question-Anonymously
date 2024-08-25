@@ -20,6 +20,7 @@ const ViewQuestions = () => {
 
     const orchestrateQuestionData = (data, setState) => {
       const questions = data?.map((doc) => ({...doc?.data(), id: doc?.id})) || [];
+      questions.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
       console.log('DOCUMENTS_FROM_FIRESTORE: ', questions);
       setState(questions);
     };

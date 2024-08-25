@@ -20,6 +20,25 @@ export const createUnique6DigitNumber = () => {
     };
 };
 
+// source: ChatGPT
+export const generateNumberFromId = (id) => {
+    // Hash the ID string to create a unique number
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) {
+        let char = id.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    hash = Math.abs(hash);
+    // Convert hash to a 4-digit number
+    let uniqueNumber = hash % 10000;
+    // Ensure the number is always 4 digits
+    if (uniqueNumber < 1000) {
+        uniqueNumber += 1000;
+    }
+    return uniqueNumber;
+};
+
 export const timeFromNow = (timestamp) => {
     dayjs.extend(relativeTime);
     return dayjs(timestamp).fromNow();
