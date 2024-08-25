@@ -5,6 +5,7 @@ import { getDocuments } from '../firebase_setup/api';
 import QuestionCard from './QuestionCard';
 import RefreshButton from './RefreshButton';
 import LoadingDot from './LoadingDot';
+import Modal from './Modal';
 
 const ViewQuestions = () => {
 
@@ -12,6 +13,7 @@ const ViewQuestions = () => {
     const [questions, setQuestions] = useState([]);
     const [animate, setAnimate] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [id, setId] = useState('');
 
     const animateOnClick = () => {
       setAnimate(true);
@@ -53,11 +55,12 @@ return (
         return (
           <QuestionCard key={val?.id || i}
             payload={val}
-            index={i}
+            setId={setId}
           />
         )
       })}
     </div>
+    <Modal classCode={location?.state} id={id}/>
   </>
 )
 }
