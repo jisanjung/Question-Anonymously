@@ -6,6 +6,7 @@ import Card from '../components/Card';
 const RoleSelectPage = () => {
   return (
     <>
+    {console.log('testing ci from jason')}
       <Nav>
         Welcome to Asker!
       </Nav>
